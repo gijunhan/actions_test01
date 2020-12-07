@@ -7,7 +7,7 @@ on:
         required: true
         default: 'version'
 jobs:
-  build:
+  build-mac:
     runs-on: macos-10.15
     steps:
     - name: Check out repository
@@ -18,5 +18,12 @@ jobs:
       run: echo "execute release close"
     - if: ${{ github.event.inputs.command == 'version' }}
       run: echo "1.0.0"
+    - name: 'bash script file test'
+      run: bash ./tools/test.sh
+  build-windows:
+    runs-on: windows-2019
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
     - name: 'bash script file test'
       run: bash ./tools/test.sh
