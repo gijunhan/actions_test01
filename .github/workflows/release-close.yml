@@ -1,0 +1,15 @@
+name: Release Open
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'release main version'
+        required: true
+jobs:
+  build-mac:
+    runs-on: macos-10.15
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: 'Release Open'
+      run: bash ./tools/gamelib.sh release-close --version=${{github.event.inputs.version}}
