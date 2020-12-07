@@ -10,6 +10,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
     - if: ${{ github.event.inputs.command == 'release-open' }}
       run: echo "execute release open"
     - if: ${{ github.event.inputs.command == 'release-close' }}
