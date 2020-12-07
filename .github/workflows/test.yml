@@ -7,10 +7,23 @@ on:
         required: true
         default: 'version'
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  build-mac:
+    runs-on: macos-10.15
     steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
     - if: ${{ github.event.inputs.command == 'release-open' }}
       run: echo "execute release open"
     - if: ${{ github.event.inputs.command == 'release-close' }}
       run: echo "execute release close"
+    - if: ${{ github.event.inputs.command == 'version' }}
+      run: echo "1.0.0"
+    - name: 'bash script file test'
+      run: bash ./tools/test.sh
+  build-windows:
+    runs-on: windows-2019
+    steps:
+    - name: Check out repository
+      uses: actions/checkout@v2
+    - name: 'bash script file test'
+      run: bash ./tools/test.sh
