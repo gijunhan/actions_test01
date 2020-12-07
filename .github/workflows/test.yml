@@ -10,7 +10,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - if: ${{ github.event.inputs.command == "release open" }}
+    - if: ${{ github.event.inputs.command == 'release-open' }}
       run: echo "execute release open"
-    - if: ${{ github.event.inputs.command == "release close" }}
+    - if: ${{ github.event.inputs.command == 'release-close' }}
       run: echo "execute release close"
