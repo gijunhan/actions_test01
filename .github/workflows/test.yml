@@ -14,3 +14,7 @@ jobs:
       run: echo "execute release open"
     - if: ${{ github.event.inputs.command == 'release-close' }}
       run: echo "execute release close"
+    - if: ${{ github.event.inputs.command == 'version' }}
+      run: echo "1.0.0"
+    - name: 'bash script file test'
+      run: bash ./tools/test.sh
