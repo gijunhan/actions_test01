@@ -5,4 +5,5 @@ cd $WORKSPACE
 echo "build-win" >> "./build/win.txt" 
 git add .
 git commit -m "build complete win"
-git push -u origin main -f
+git pull
+git push -u origin main

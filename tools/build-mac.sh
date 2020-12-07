@@ -5,4 +5,5 @@ cd $WORKSPACE
 echo "build-mac" >> "./build/mac.txt" 
 git add .
 git commit -m "build complete mac"
-git push -u origin main -f
+git pull
+git push -u origin main
