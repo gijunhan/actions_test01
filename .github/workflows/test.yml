@@ -1,10 +1,10 @@
 name: Manual Trigger
 on: [ workflow_dispatch ]
-inputs:
-  command:
-    description: 'command'
-    required: true
-    default: 'version'
+  inputs:
+    command:
+      description: 'command'
+      required: true
+      default: 'version'
 jobs:
   build:
     runs-on: ubuntu-latest
